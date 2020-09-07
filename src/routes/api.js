@@ -3,7 +3,7 @@ import { Router } from 'express';
 const router = Router();
 
 router.get('/', (req, res) => {
-    res.send('You are on the api page.');
+    res.send('API Home Page');
 });
 
 export default router;

@@ -16,7 +16,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 /* SETUP OF ROUTES */
 app.use('/users', routes.user);
-app.use('/messages', routes.message);
 app.use('/api', routes.api);
 
 app.listen(process.env.PORT, () => {
