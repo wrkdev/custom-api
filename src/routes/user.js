@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { handleUser } from '../functions/user';
 
 const router = Router();
 
@@ -7,7 +8,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:userId', (req, res) => {
-  return res.send(`Single User: ${req.params.userId}`);
+  return res.send(handleUser(req.params.userId));
 });
 
 export default router;
