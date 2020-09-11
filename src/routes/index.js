@@ -1,4 +1,4 @@
-import user from './user';
+import user from './users';
 import api from './api';
 
 export default {
