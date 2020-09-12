@@ -1,0 +1,29 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "wrkdev",
+      "name": "James",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/38469679?v=4",
+      "profile": "https://github.com/wrkdev",
+      "contributions": [
+        "code",
+        "doc",
+        "infra",
+        "maintenance",
+        "projectManagement",
+        "review"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "custom-api",
+  "projectOwner": "wrkdev",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
