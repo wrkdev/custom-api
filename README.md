@@ -1,9 +1,6 @@
 # Custom-API
 
-![Dependencies](https://img.shields.io/david/wrkdev/custom-api)
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+![Dependencies](https://img.shields.io/david/wrkdev/custom-api) [![GitHub forks](https://img.shields.io/github/forks/wrkdev/custom-api)](https://github.com/wrkdev/custom-api/network) [![GitHub issues](https://img.shields.io/github/issues/wrkdev/custom-api)](https://github.com/wrkdev/custom-api/issues) [![GitHub license](https://img.shields.io/github/license/wrkdev/custom-api)](https://github.com/wrkdev/custom-api)
 
 Custom-API is an application that allows users to make api calls to users and posts endpoints.
 
