@@ -1,7 +1,7 @@
-import user from './user';
-import api from './api';
+import user from './users';
+import posts from './private/posts';
 
 export default {
     user,
-    api
+    posts
 };
