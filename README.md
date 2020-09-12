@@ -1,11 +1,9 @@
 # Custom-API
+
+![Dependencies](https://img.shields.io/david/wrkdev/custom-api)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
-
-<!--- These are examples. See https://shields.io for others or to customize this set of shields. You might want to include dependencies, project status and licence info here --->
-![Dependencies](https://img.shields.io/david/wrkdev/custom-api)
-![GitHub contributors](https://img.shields.io/github/contributors/wrkdev/custom-api)
 
 Custom-API is an application that allows users to make api calls to users and posts endpoints.
 
@@ -73,10 +71,6 @@ Thanks to the following people who have contributed to this project:
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
-
-* [@wrkdev](https://github.com/wrkdev) 📖
-
-You might want to consider using something like the [All Contributors](https://github.com/all-contributors/all-contributors) specification and its [emoji key](https://allcontributors.org/docs/en/emoji-key).
 
 ## Contact
 
