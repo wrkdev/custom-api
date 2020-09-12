@@ -1,6 +1,6 @@
 # Custom-API
 
-![Dependencies](https://img.shields.io/david/wrkdev/custom-api) [![GitHub forks](https://img.shields.io/github/forks/wrkdev/custom-api)](https://github.com/wrkdev/custom-api/network) [![GitHub issues](https://img.shields.io/github/issues/wrkdev/custom-api)](https://github.com/wrkdev/custom-api/issues) [![GitHub license](https://img.shields.io/github/license/wrkdev/custom-api)](https://github.com/wrkdev/custom-api)
+![Dependencies](https://img.shields.io/david/wrkdev/custom-api) [![GitHub license](https://img.shields.io/github/license/wrkdev/custom-api)](https://github.com/wrkdev/custom-api)
 
 Custom-API is an application that allows users to make api calls to users and posts endpoints.
 
@@ -17,6 +17,7 @@ Before you begin, ensure you have met the following requirements:
 
 * You have installed the latest version of `nodejs`.
 * You have created a `Mongodb Atlas` account.
+    * Follow the instructions [here](https://docs.atlas.mongodb.com/getting-started/) to get started with Mongodb Atlas.
 
 ## Installing Custom-API
 
@@ -25,6 +26,14 @@ To install Custom-API, follow these steps:
 ```
 git clone https://github.com/wrkdev/custom-api.git
 npm install
+```
+
+You will also need to create a .env file to put your environment variables in:
+
+```
+PORT={PORT_NUMBER}
+DB_CONNECTION={DB_CONNECTION_ADDRESS}
+TOKEN_SECRET={TOKEN_SECRET}
 ```
 
 ## Using Custom-API
@@ -42,7 +51,7 @@ npm run start / yarn start
 ```
 
 ## Contributing to Custom-API
-<!--- If your README is long or you have some specific process or steps you want contributors to follow, consider creating a separate CONTRIBUTING.md file--->
+
 To contribute to Custom-API, follow these steps:
 
 1. Fork this repository.
@@ -56,18 +65,8 @@ Alternatively see the GitHub documentation on [creating a pull request](https://
 ## Contributors
 
 Thanks to the following people who have contributed to this project:
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/wrkdev"><img src="https://avatars1.githubusercontent.com/u/38469679?v=4" width="100px;" alt=""/><br /><sub><b>James</b></sub></a><br /><a href="https://github.com/wrkdev/custom-api/commits?author=wrkdev" title="Code">💻</a> <a href="https://github.com/wrkdev/custom-api/commits?author=wrkdev" title="Documentation">📖</a> <a href="#infra-wrkdev" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-wrkdev" title="Maintenance">🚧</a> <a href="#projectManagement-wrkdev" title="Project Management">📆</a> <a href="https://github.com/wrkdev/custom-api/pulls?q=is%3Apr+reviewed-by%3Awrkdev" title="Reviewed Pull Requests">👀</a></td>
-  </tr>
-</table>
 
-<!-- markdownlint-enable -->
-<!-- prettier-ignore-end -->
-<!-- ALL-CONTRIBUTORS-LIST:END -->
+* [@wrkdev](https://github.com/wrkdev) 📖
 
 ## Contact
 
