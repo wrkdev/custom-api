@@ -27,6 +27,14 @@ git clone https://github.com/wrkdev/custom-api.git
 npm install
 ```
 
+You will also need to create a .env file to put your environment variables in:
+
+```
+PORT={PORT_NUMBER}
+DB_CONNECTION={DB_CONNECTION_ADDRESS}
+TOKEN_SECRET={TOKEN_SECRET}
+```
+
 ## Using Custom-API
 
 To use Custom-API, follow these steps:
