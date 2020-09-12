@@ -14,7 +14,7 @@ This enables a user to add posts to a website using this application as well as 
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
-<!--- These are just example requirements. Add, duplicate or remove as required --->
+
 * You have installed the latest version of `nodejs`.
 * You have created a `Mongodb Atlas` account.
 
@@ -61,10 +61,11 @@ Thanks to the following people who have contributed to this project:
 <!-- markdownlint-disable -->
 <table>
   <tr>
+    <td align="center"><a href="https://github.com/wrkdev"><img src="https://avatars1.githubusercontent.com/u/38469679?v=4" width="100px;" alt=""/><br /><sub><b>James</b></sub></a><br /><a href="https://github.com/wrkdev/custom-api/commits?author=wrkdev" title="Code">💻</a> <a href="https://github.com/wrkdev/custom-api/commits?author=wrkdev" title="Documentation">📖</a> <a href="#infra-wrkdev" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-wrkdev" title="Maintenance">🚧</a> <a href="#projectManagement-wrkdev" title="Project Management">📆</a> <a href="https://github.com/wrkdev/custom-api/pulls?q=is%3Apr+reviewed-by%3Awrkdev" title="Reviewed Pull Requests">👀</a></td>
   </tr>
 </table>
 
-<!-- markdownlint-restore -->
+<!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
