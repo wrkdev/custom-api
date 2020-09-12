@@ -1,7 +1,4 @@
 # Custom-API
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![Dependencies](https://img.shields.io/david/wrkdev/custom-api) [![GitHub forks](https://img.shields.io/github/forks/wrkdev/custom-api)](https://github.com/wrkdev/custom-api/network) [![GitHub issues](https://img.shields.io/github/issues/wrkdev/custom-api)](https://github.com/wrkdev/custom-api/issues) [![GitHub license](https://img.shields.io/github/license/wrkdev/custom-api)](https://github.com/wrkdev/custom-api)
 
@@ -17,7 +14,7 @@ This enables a user to add posts to a website using this application as well as 
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
-<!--- These are just example requirements. Add, duplicate or remove as required --->
+
 * You have installed the latest version of `nodejs`.
 * You have created a `Mongodb Atlas` account.
 
@@ -69,17 +66,6 @@ Thanks to the following people who have contributed to this project:
 </table>
 
 <!-- markdownlint-enable -->
-<!-- prettier-ignore-end -->
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-  </tr>
-</table>
-
-<!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
