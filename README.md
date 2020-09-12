@@ -61,7 +61,6 @@ Thanks to the following people who have contributed to this project:
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/wrkdev"><img src="https://avatars1.githubusercontent.com/u/38469679?v=4?s=100" width="100px;" alt=""/><br /><sub><b>James</b></sub></a><br /><a href="https://github.com/wrkdev/custom-api/commits?author=wrkdev" title="Code">💻</a> <a href="https://github.com/wrkdev/custom-api/commits?author=wrkdev" title="Documentation">📖</a> <a href="#projectManagement-wrkdev" title="Project Management">📆</a> <a href="https://github.com/wrkdev/custom-api/pulls?q=is%3Apr+reviewed-by%3Awrkdev" title="Reviewed Pull Requests">👀</a></td>
   </tr>
 </table>
 

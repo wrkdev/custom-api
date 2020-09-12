@@ -9,19 +9,6 @@
   "imageSize": 100,
   "commit": true,
   "commitConvention": "eslint",
-  "contributors": [
-    {
-      "login": "wrkdev",
-      "name": "James",
-      "avatar_url": "https://avatars1.githubusercontent.com/u/38469679?v=4",
-      "profile": "https://github.com/wrkdev",
-      "contributions": [
-        "code",
-        "doc",
-        "projectManagement",
-        "review"
-      ]
-    }
-  ],
+  "contributors": [],
   "contributorsPerLine": 7
 }
