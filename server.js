@@ -27,6 +27,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 /* SETUP OF ROUTES */
 app.use('/api/users', routes.user);
 app.use('/api/posts', routes.posts);
+app.use('/api/tasks', routes.tasks);
 
 app.use((req, res, next) => {
   next(createError(404));
