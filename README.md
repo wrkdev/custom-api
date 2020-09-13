@@ -7,7 +7,7 @@ Custom-API is an application that allows users to make api calls to multiple end
 This application is for use with a frontend application. It has the following functions:
 * Allow registration of a user
 * Allow login of a user
-* Allow a user to perform CRUD operations on posts.
+* Allow a user to perform CRUD operations on posts and tasks.
 
 This enables a user to add posts to a website using this application as well as register and login to that website.
 
