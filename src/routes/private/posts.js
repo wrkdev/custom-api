@@ -18,4 +18,4 @@ router.patch('/:postId', verify, updatePost);
 // DELETE POST
 router.delete('/:postId', verify, deletePost);
 
-module.exports = router;
+export default router;

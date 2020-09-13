@@ -1,5 +1,6 @@
 import user from './users';
-import { posts, tasks } from './private';
+import posts from './private/posts';
+import tasks from './private/tasks';
 
 export default {
     user,
