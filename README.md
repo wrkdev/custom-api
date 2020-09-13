@@ -1,6 +1,6 @@
 # Custom-API
 
-![Dependencies](https://img.shields.io/david/wrkdev/custom-api?style=flat-square) [![GitHub license](https://img.shields.io/github/license/wrkdev/custom-api?style=flat-square)](https://github.com/wrkdev/custom-api) ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/wrkdev/custom-api?include_prereleases&style=flat-square) [![Netlify Status](https://api.netlify.com/api/v1/badges/5bb975d6-5051-4352-af1a-e188e745b64c/deploy-status)](https://app.netlify.com/sites/hardcore-noether-a1d5a1/deploys)
+![Dependencies](https://img.shields.io/david/wrkdev/custom-api?style=flat-square) [![GitHub license](https://img.shields.io/github/license/wrkdev/custom-api?style=flat-square)](https://github.com/wrkdev/custom-api) ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/wrkdev/custom-api?include_prereleases&style=flat-square)
 
 Custom-API is an application that allows users to make api calls to multiple endpoints.
 
