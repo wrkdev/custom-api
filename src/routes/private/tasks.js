@@ -17,3 +17,5 @@ router.post('/:taskId', verify, updateTask);
 
 // DELETE TASK
 router.delete('/:taskId', verify, deleteTask);
+
+export default router;

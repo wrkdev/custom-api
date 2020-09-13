@@ -26,7 +26,7 @@ export const registerUser = async (req, res) => {
 
     try {
         const savedUser = await user.save();
-        res.send({
+        res.status(201).send({
             user: savedUser.id
         });
     } catch (err) {
