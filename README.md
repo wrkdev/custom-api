@@ -2,7 +2,7 @@
 
 ![Dependencies](https://img.shields.io/david/wrkdev/custom-api?style=flat-square) [![GitHub license](https://img.shields.io/github/license/wrkdev/custom-api?style=flat-square)](https://github.com/wrkdev/custom-api) ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/wrkdev/custom-api?include_prereleases&style=flat-square)
 
-Custom-API is an application that allows users to make api calls to users and posts endpoints.
+Custom-API is an application that allows users to make api calls to multiple endpoints.
 
 This application is for use with a frontend application. It has the following functions:
 * Allow registration of a user
