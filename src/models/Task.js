@@ -13,13 +13,6 @@ const taskSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    closed: {
-        type: Boolean,
-        default: false
-    },
-    closedBy: {
-        type: String
-    },
     date: {
         type: Date,
         default: Date.now

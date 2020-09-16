@@ -1,21 +1,20 @@
 import express from 'express';
 import { getPosts, getPost, createPost, updatePost, deletePost } from '../../controllers/posts';
-import { verify } from '../../validation/verifyToken';
 const router = express.Router();
 
 // GET LIST OF POSTS
-router.get('/', verify, getPosts);
+router.get('/', getPosts);
 
 // GET SINGLE POST
-router.get('/:postId', verify, getPost);
+router.get('/:postId', getPost);
 
 // CREATE POST
-router.post('/', verify, createPost);
+router.post('/', createPost);
 
 // UPDATE POST
-router.patch('/:postId', verify, updatePost);
+router.patch('/:postId', updatePost);
 
 // DELETE POST
-router.delete('/:postId', verify, deletePost);
+router.delete('/:postId', deletePost);
 
 export default router;
