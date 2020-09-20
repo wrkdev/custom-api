@@ -70,20 +70,21 @@ export const deleteTask = async (req, res) => {
     }
 };
 
-export const closeTask = async (req, res) => {
+/* REMOVED UNTIL FUNCTIONALITY BUILT TO USE IT */
+// export const closeTask = async (req, res) => {
 
-    try {
-        const task = await Task.findById(req.params.taskId);
-        const update = { 
-            $set: {
-                closed: true,
-                closedBy: req.body.closedBy,
-                date: Date.now()
-            }
-        };
-        const closedTask = await Task.updateOne(task._id, update);
-        res.status(201).json(closedTask);
-    } catch (err) {
-        res.status(400).json({ code: 400, message: err });
-    }
-};
+//     try {
+//         const task = await Task.findById(req.params.taskId);
+//         const update = { 
+//             $set: {
+//                 closed: true,
+//                 closedBy: req.body.closedBy,
+//                 date: Date.now()
+//             }
+//         };
+//         const closedTask = await Task.updateOne(task._id, update);
+//         res.status(201).json(closedTask);
+//     } catch (err) {
+//         res.status(400).json({ code: 400, message: err });
+//     }
+// };
