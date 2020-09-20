@@ -51,8 +51,7 @@
         "application/json"
     ],
     "paths": {
-        "/tasks": 
-        {
+        "/tasks": {
             "get": {
                 "tags": [
                     "Task"
@@ -66,7 +65,7 @@
                     "201": {
                         "description": "Successfully retrieved list of tasks",
                         "schema": {
-                            "$ref": "#/definitions/Task"
+                            "$ref": "#/definitions/Tasks"
                         }
                     },
                     "404": {
@@ -102,16 +101,296 @@
                     }
                 }
             }
+        },
+        "/tasks/{taskId}": {
+            "get": {
+                "tags": [
+                    "Task"
+                ],
+                "summary": "Retrieve a single Task",
+                "description": "Return a single task",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "taskId",
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "description": "Id of Task"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Successfully retrieved a single task",
+                        "schema": {
+                            "$ref": "#/definitions/Task"
+                        }
+                    },
+                    "404": {
+                        "description": "{taskId} not found in database"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Task"
+                ],
+                "summary": "Update a single Task",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "taskId",
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "description": "Id of Task"
+                    },
+                    {
+                        "name": "Task",
+                        "in": "body",
+                        "description": "Task to be created",
+                        "schema": {
+                            "$ref": "#/definitions/UpdateTask"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully updated task with id: {taskId}"
+                    },
+                    "400": {
+                        "description": "Failed to update task"
+                    },
+                    "404": {
+                        "description": "{taskId} not found in database"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Task"
+                ],
+                "summary": "Delete a Single Task",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "taskId",
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "description": "Id of Task"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully deleted task"
+                    },
+                    "400": {
+                        "description": "Failed to delete task"
+                    },
+                    "404": {
+                        "description": "{taskId} not found in database"
+                    }
+                }
+            }
+        },
+        "/posts": {
+            "get": {
+                "tags": [
+                    "Post"
+                ],
+                "summary": "Retrieve a list of posts",
+                "description": "Return a list of posts",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Successfully retrieved a list of posts",
+                        "schema": {
+                            "$ref": "#/definitions/Posts"
+                        }
+                    },
+                    "400": {
+                        "description": "Failed to retrieve posts"
+                    },
+                    "404": {
+                        "description": "No posts found."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Post"
+                ],
+                "summary": "Create a new Post",
+                "description": "Returns a newly created post",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Post",
+                        "in": "body",
+                        "description": "Post to be created",
+                        "schema": {
+                            "$ref": "#/definitions/Post"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Successfully created a new Post.",
+                        "schema": {
+                            "$ref": "#/definitions/Post"
+                        }
+                    },
+                    "400": {
+                        "description": "Failed to create new post"
+                    }
+                }
+            }
+        },
+        "/posts/{postId}": {
+            "get": {
+                "tags": [
+                    "Post"
+                ],
+                "summary": "Retrieve a single Post",
+                "description": "Returns a single Post",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "postId",
+                        "in": "path",
+                        "type": "string",
+                        "description": "Id of Post",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Successfully retrieved post.",
+                        "schema": {
+                            "$ref": "#/definitions/Post"
+                        }
+                    },
+                    "400": {
+                        "description": "Failed to retrieve post"
+                    },
+                    "404": {
+                        "description": "{postId} not found in database"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Post"
+                ],
+                "summary": "Update an existing Post",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "postId",
+                        "in": "path",
+                        "type": "string",
+                        "description": "Id of Post",
+                        "required": true
+                    },
+                    {
+                        "name": "Post",
+                        "in": "body",
+                        "description": "Post to be updated",
+                        "schema": {
+                            "$ref": "#/definitions/UpdatePost"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully updated Post with id: {postId}"
+                    },
+                    "400": {
+                        "description": "Failed to update post"
+                    },
+                    "404": {
+                        "description": "{postId} not found in database"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Post"
+                ],
+                "summary": "Delete a single post",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "postId",
+                        "in": "path",
+                        "type": "string",
+                        "description": "Id of Post",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully deleted Post with id: {postId}"
+                    },
+                    "400": {
+                        "description": "Failed to delete post"
+                    },
+                    "404": {
+                        "description": "{postId} not found in database"
+                    }
+                }
+            }
         }
     },
     "definitions": {
         "Task": {
+            "required": [
+                "summary",
+                "description",
+                "createdBy"
+            ],
             "properties": {
-                "_id": {
+                "summary": {
                     "type": "string",
                     "uniqueItems": true
                 },
-                "title": {
+                "description": {
+                    "type": "string",
+                    "uniqueItems": true
+                },
+                "createdBy": {
+                    "type": "string",
+                    "uniqueItems": false
+                },
+                "date": {
+                    "type": "string"
+                }
+            }
+        },
+        "UpdateTask": {
+            "properties": {
+                "summary": {
                     "type": "string",
                     "uniqueItems": true
                 },
@@ -128,6 +407,67 @@
         "Tasks": {
             "type": "array",
             "$ref": "#/definitions/Task"
+        },
+        "Post": {
+            "required": [
+                "title",
+                "description"
+            ],
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "uniqueItems": true
+                },
+                "description": {
+                    "type": "string",
+                    "uniqueItems": false
+                },
+                "date": {
+                    "type": "string"
+                }
+            }
+        },
+        "UpdatePost": {
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "uniqueItems": true
+                },
+                "description": {
+                    "type": "string"
+                }
+            }
+        },
+        "Posts": {
+            "type": "array",
+            "$ref": "#/definitions/Post"
+        },
+        "User": {
+            "required": [
+                "name",
+                "email"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "uniqueItems": true
+                },
+                "email": {
+                    "type": "string",
+                    "uniqueItems": true
+                },
+                "password": {
+                    "type": "string",
+                    "uniqueItems": true
+                },
+                "date": {
+                    "type": "string"
+                }
+            }
+        },
+        "Users": {
+            "type": "array",
+            "$ref": "#/definitions/User"
         }
     }
 
