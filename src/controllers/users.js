@@ -1,9 +1,9 @@
-import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
-import { registerValidation, loginValidation } from '../validation/validation';
-import User from '../models/user';
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const { registerValidation, loginValidation } = require('../validation/validation.js');
+const User = require('../models/User.js');
 
-export const registerUser = async (req, res) => {
+const registerUser = async (req, res) => {
 
     // Validate user input
     const { error } = registerValidation(req.body);
@@ -34,7 +34,7 @@ export const registerUser = async (req, res) => {
     }
 };
 
-export const loginUser = async (req, res) => {
+const loginUser = async (req, res) => {
     
     // Validate user input
     const { error } = loginValidation(req.body);
@@ -51,4 +51,9 @@ export const loginUser = async (req, res) => {
     // Create and assign a token
     const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
     res.header('auth-token', token).send(token);
+};
+
+module.exports = {
+    registerUser,
+    loginUser
 };

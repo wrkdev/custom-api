@@ -1,8 +1,8 @@
-import user from './users';
-import posts from './posts';
-import tasks from './tasks';
+const user = require('./users');
+const posts = require('./posts');
+const tasks = require('./tasks');
 
-export default {
+module.exports = {
     user,
     posts,
     tasks

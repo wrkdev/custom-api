@@ -1,19 +1,23 @@
 /* MAIN SERVER FILE FOR SETTING UP CUSTOM-API SERVER */
-import 'dotenv/config';
-import cors from 'cors';
-import bodyParser from 'body-parser';
-import express from 'express';
-import createError from 'http-errors';
-import logger from 'morgan';
-import mongoose from 'mongoose';
-import moment from 'moment';
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const express = require('express');
+const createError = require('http-errors');
+const logger = require('morgan');
+const mongoose = require('mongoose');
+const moment = require('moment');
 
-/* IMPORT SWAGGER FILES */
-import swaggerUi from 'swagger-ui-express';
-import * as swaggerDocument from './src/swagger/swagger.json';
+/* const .ENV */ 
+const dotenv = require('dotenv');
+const dotenvExpand = require('dotenv-expand');
+dotenvExpand(dotenv.config());
 
-/* IMPORT ROUTES */
-import routes from './src/routes';
+/* const SWAGGER FILES */
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./src/swagger/swagger.json');
+
+/* const ROUTES */
+const routes = require('./src/routes');
 const router = express.Router();
 
 const app = express();
