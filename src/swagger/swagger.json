@@ -31,14 +31,6 @@
                 "description": "Find out more",
                 "url": "https://github.com/wrkdev/custom-api/documentation/posts.html"
             }
-        },
-        {
-            "name": "Users",
-            "description": "All operations related to Users",
-            "externalDocs": {
-                "description": "Find out more",
-                "url": "https://github.com/wrkdev/custom-api/documentation/users.html"
-            }
         }
     ],
     "schemes": [
