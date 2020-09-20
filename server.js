@@ -34,7 +34,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-app.use(`/api`, router);
+app.use('/api', router);
 
 
 app.use((req, res, next) => {
