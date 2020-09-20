@@ -42,9 +42,7 @@ const taskValidation = (data) => {
             .required(),
         createdBy: Joi.string()
             .required(),
-        closed: Joi.boolean()
-            .default(false),
-        closedBy: Joi.String()
+        date: Joi.date()
     });
 
     return schema.validate(data);
