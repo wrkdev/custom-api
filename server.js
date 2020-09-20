@@ -8,8 +8,13 @@ import logger from 'morgan';
 import mongoose from 'mongoose';
 import moment from 'moment';
 
+/* IMPORT SWAGGER FILES */
+import swaggerUi from 'swagger-ui-express';
+import * as swaggerDocument from './src/swagger/swagger.json';
+
 /* IMPORT ROUTES */
 import routes from './src/routes';
+const router = express.Router();
 
 const app = express();
 
@@ -18,16 +23,19 @@ mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedT
   console.log(`Connected to Database at ${moment().format('DD/MM/YY HH:mm:ss')}`);
 });
 
+/* SETUP OF ROUTES */
+router.use('/users', routes.user);
+router.use('/posts', routes.posts);
+router.use('/tasks', routes.tasks);
+
 /* SETUP OF MIDDLEWARE */
 app.use(logger('dev'));
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/api', router);
 
-/* SETUP OF ROUTES */
-app.use('/api/users', routes.user);
-app.use('/api/posts', routes.posts);
-app.use('/api/tasks', routes.tasks);
 
 app.use((req, res, next) => {
   next(createError(404));

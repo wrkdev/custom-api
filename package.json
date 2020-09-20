@@ -1,6 +1,6 @@
 {
   "name": "custom-api",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Custom API to handle calls to be built",
   "main": "server.js",
   "scripts": {
@@ -39,6 +39,7 @@
     "mongoose": "^5.10.5",
     "morgan": "^1.10.0",
     "path": "^0.12.7",
+    "swagger-ui-express": "^4.1.4",
     "uuid": "^8.3.0"
   },
   "devDependencies": {

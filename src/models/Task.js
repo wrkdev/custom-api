@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const taskSchema = mongoose.Schema({
-    title: {
+    summary: {
         type: String,
         required: true
     },
@@ -12,13 +12,6 @@ const taskSchema = mongoose.Schema({
     createdBy: {
         type: String,
         required: true
-    },
-    closed: {
-        type: Boolean,
-        default: false
-    },
-    closedBy: {
-        type: String
     },
     date: {
         type: Date,
