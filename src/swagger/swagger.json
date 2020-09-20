@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "title": "Custom API Project Documentation",
+        "title": "Custom API Documentation",
         "description": "Custom api which allows a frontend application to interact with posts, tasks and users endpoints",
         "termsOfService": "http://swagger.io/terms",
         "contact": {
