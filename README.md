@@ -2,14 +2,10 @@
 
 ![Dependencies](https://img.shields.io/david/wrkdev/custom-api?style=flat-square) [![GitHub license](https://img.shields.io/github/license/wrkdev/custom-api?style=flat-square)](https://github.com/wrkdev/custom-api) ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/wrkdev/custom-api?include_prereleases&style=flat-square)
 
-Custom-API is an application that allows users to make api calls to multiple endpoints.
+Custom-API is a Swagger API Application which allows users to make calls to tasks and posts endpoints.
 
-This application is for use with a frontend application. It has the following functions:
-* Allow registration of a user
-* Allow login of a user
-* Allow a user to perform CRUD operations on posts and tasks.
-
-This enables a user to add posts and tasks to a website using this application as well as register and login to that website.
+This application is for use with a frontend application. It allows a user to execute CRUD operations on tasks and posts
+This also enables a user to add posts and tasks to a website using this application.
 
 ## Prerequisites
 
