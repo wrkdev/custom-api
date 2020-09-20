@@ -1,24 +1,30 @@
 import Post from '../models/Post';
+import { postValidation } from '../validation/validation';
 
 export const getPosts = async (req, res) => {
     try {
         const posts = await Post.find();
-        res.json(posts);
+        res.status(201).json(posts);
     } catch (err) {
-        res.json({ message: err })
+        res.status(400).json({ code: 400, message: err });
     }
 };
 
 export const getPost = async (req, res) => {
     try {
         const post = await Post.findById(req.params.postId);
-        res.json(post);
+        res.status(201).json(post);
     } catch (err) {
-        res.json({ message: err });
+        res.status(400).json({ code: 400, message: `Failed to get post with id: ${req.params.postId}` });
     }
 };
 
 export const createPost = async (req, res) => {
+
+    // Validate user input
+    const { error } = postValidation(req.body);
+    if (error) return res.status(400).send(error.details[0].message);
+
     const post = new Post({
         title: req.body.title,
         description: req.body.description
@@ -26,9 +32,9 @@ export const createPost = async (req, res) => {
 
     try {
         const response = await post.save();
-        res.json(response);
+        res.status(201).json(response);
     } catch (err) {
-        res.json({ message: err });
+        res.status(400).json({ code: 400, message: err });
     }
 };
 
@@ -42,18 +48,18 @@ export const updatePost = async (req, res) => {
                 date: req.body.date ? req.body.date : post.date
             }
         };
-        const response = await Post.updateOne({ _id: req.params.postId }, update);
-        res.json(response);
+        await Post.updateOne({ _id: req.params.postId }, update);
+        res.status(200).send(`Successfully update post with id: ${post._id}`);
     } catch (err) {
-        res.json({ message: err });
+        res.status(400).json({ code: 400, message: err });
     }
 };
 
 export const deletePost = async (req, res) => {
     try {
         const response = await Post.remove({ _id: req.params.postId });
-        res.json(response);
+        res.status(200).json(response);
     } catch (err) {
-        res.json({ message: err });
+        res.status(400).json({ code: 400, message: err });
     }
 };
