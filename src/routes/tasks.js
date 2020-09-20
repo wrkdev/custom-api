@@ -1,5 +1,5 @@
 import express from 'express';
-import { getTasks, getTask, createTask, updateTask, deleteTask } from '../../controllers/tasks';
+import { getTasks, getTask, createTask, updateTask, deleteTask } from '../controllers/tasks';
 const router = express.Router();
 
 // GET LIST OF TASKS
@@ -12,7 +12,7 @@ router.get('/:taskId', getTask);
 router.post('/', createTask);
 
 // UPDATE TASK
-router.post('/:taskId', updateTask);
+router.patch('/:taskId', updateTask);
 
 // DELETE TASK
 router.delete('/:taskId', deleteTask);
