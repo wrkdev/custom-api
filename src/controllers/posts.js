@@ -1,7 +1,7 @@
-import Post from '../models/Post';
-import { postValidation } from '../validation/validation';
+const Post = require('../models/Post.js');
+const { postValidation } = require('../validation/validation.js');
 
-export const getPosts = async (req, res) => {
+const getPosts = async (req, res) => {
     try {
         const posts = await Post.find();
         res.status(201).json(posts);
@@ -10,7 +10,7 @@ export const getPosts = async (req, res) => {
     }
 };
 
-export const getPost = async (req, res) => {
+const getPost = async (req, res) => {
     try {
         const post = await Post.findById(req.params.postId);
         res.status(201).json(post);
@@ -19,7 +19,7 @@ export const getPost = async (req, res) => {
     }
 };
 
-export const createPost = async (req, res) => {
+const createPost = async (req, res) => {
 
     // Validate user input
     const { error } = postValidation(req.body);
@@ -38,7 +38,7 @@ export const createPost = async (req, res) => {
     }
 };
 
-export const updatePost = async (req, res) => {
+const updatePost = async (req, res) => {
     try {
         const post = await Post.findById(req.params.postId);
         const update = { 
@@ -55,11 +55,19 @@ export const updatePost = async (req, res) => {
     }
 };
 
-export const deletePost = async (req, res) => {
+const deletePost = async (req, res) => {
     try {
         const response = await Post.remove({ _id: req.params.postId });
         res.status(200).json(response);
     } catch (err) {
         res.status(400).json({ code: 400, message: err });
     }
+};
+
+module.exports = {
+    getPosts,
+    getPost,
+    createPost,
+    updatePost,
+    deletePost
 };

@@ -1,7 +1,7 @@
-import Task from '../models/Task';
-import { taskValidation } from '../validation/validation';
+const Task = require('../models/Task.js');
+const { taskValidation } = require('../validation/validation.js');
 
-export const getTasks = async (req, res) => {
+const getTasks = async (req, res) => {
 
     try {
         const tasks = await Task.find();
@@ -11,7 +11,7 @@ export const getTasks = async (req, res) => {
     }
 };
 
-export const getTask = async (req, res) => {
+const getTask = async (req, res) => {
 
     try {
         const tasks = await Task.findById(req.params.taskId);
@@ -21,7 +21,7 @@ export const getTask = async (req, res) => {
     }
 };
 
-export const createTask = async (req, res) => {
+const createTask = async (req, res) => {
 
     // Validate user input
     const { error } = taskValidation(req.body);
@@ -41,7 +41,7 @@ export const createTask = async (req, res) => {
     }
 };
 
-export const updateTask = async (req, res) => {
+const updateTask = async (req, res) => {
 
     try {
         const task = await Task.findById(req.params.taskId);
@@ -60,7 +60,7 @@ export const updateTask = async (req, res) => {
     }
 };
 
-export const deleteTask = async (req, res) => {
+const deleteTask = async (req, res) => {
 
     try {
         const task = await Task.remove({ _id: req.params.taskId });
@@ -88,3 +88,11 @@ export const deleteTask = async (req, res) => {
 //         res.status(400).json({ code: 400, message: err });
 //     }
 // };
+
+module.exports = {
+    getTasks,
+    getTask,
+    createTask,
+    updateTask,
+    deleteTask
+};

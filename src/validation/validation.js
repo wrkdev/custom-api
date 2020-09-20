@@ -1,4 +1,4 @@
-import Joi from '@hapi/joi';
+const Joi = require('@hapi/joi');
 
 // Register Validation
 const registerValidation = (data) => {
@@ -66,4 +66,4 @@ module.exports = {
     loginValidation,
     taskValidation,
     postValidation
-}
+};
