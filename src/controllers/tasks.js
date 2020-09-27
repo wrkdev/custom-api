@@ -1,73 +1,73 @@
-const Task = require('../models/Task.js');
-const { taskValidation } = require('../validation/validation.js');
+const Task = require("../models/Task.js");
+const { taskValidation } = require("../validation/validation.js");
 
 const getTasks = async (req, res) => {
 
-    try {
-        const tasks = await Task.find();
-        res.status(201).json(tasks);
-    } catch (err) {
-        res.status(400).json({ code: 400, message: err});
-    }
+  try {
+    const tasks = await Task.find();
+    res.status(201).json(tasks);
+  } catch (err) {
+    res.status(400).json({ code: 400, message: err});
+  }
 };
 
 const getTask = async (req, res) => {
 
-    try {
-        const tasks = await Task.findById(req.params.taskId);
-        res.status(201).json(tasks);
-    } catch (err) {
-        res.status(400).json({ code: 400, message: err });
-    }
+  try {
+    const tasks = await Task.findById(req.params.taskId);
+    res.status(201).json(tasks);
+  } catch (err) {
+    res.status(400).json({ code: 400, message: err });
+  }
 };
 
 const createTask = async (req, res) => {
 
-    // Validate user input
-    const { error } = taskValidation(req.body);
-    if (error) return res.status(400).json({ code: 400, message: error.details[0].message });
+  // Validate user input
+  const { error } = taskValidation(req.body);
+  if (error) return res.status(400).json({ code: 400, message: error.details[0].message });
 
-    const task = new Task({
-        summary: req.body.summary,
-        description: req.body.description,
-        createdBy: req.body.createdBy
-    });
+  const task = new Task({
+    summary: req.body.summary,
+    description: req.body.description,
+    createdBy: req.body.createdBy
+  });
 
-    try {
-        const createdTask = await task.save();
-        res.status(201).json(createdTask);
-    } catch (err) {
-        res.status(400).json({ code: 400, message: err });
-    }
+  try {
+    const createdTask = await task.save();
+    res.status(201).json(createdTask);
+  } catch (err) {
+    res.status(400).json({ code: 400, message: err });
+  }
 };
 
 const updateTask = async (req, res) => {
 
-    try {
-        const task = await Task.findById(req.params.taskId);
-        const update = { 
-            $set: {
-                summary: req.body.summary ? req.body.summary : task.summary,
-                description: req.body.description ? req.body.description : task.description,
-                updatedBy: req.body.updatedBy ? req.body.updatedBy : task.updatedBy,
-                date: req.body.date ? req.body.date : task.date
-            }
-        };
-        await Task.updateOne({ _id: req.params.taskId }, update);
-        res.status(200).send(`Successfully update task with id: ${task._id}`);
-    } catch (err) {
-        res.status(400).json({ code: 400, message: err });
-    }
+  try {
+    const task = await Task.findById(req.params.taskId);
+    const update = { 
+      $set: {
+        summary: req.body.summary ? req.body.summary : task.summary,
+        description: req.body.description ? req.body.description : task.description,
+        updatedBy: req.body.updatedBy ? req.body.updatedBy : task.updatedBy,
+        date: req.body.date ? req.body.date : task.date
+      }
+    };
+    await Task.updateOne({ _id: req.params.taskId }, update);
+    res.status(200).send(`Successfully update task with id: ${task._id}`);
+  } catch (err) {
+    res.status(400).json({ code: 400, message: err });
+  }
 };
 
 const deleteTask = async (req, res) => {
 
-    try {
-        const task = await Task.remove({ _id: req.params.taskId });
-        res.status(201).send(`${task} has been deleted.`);
-    } catch (err) {
-        res.status(400).json({ code: 400, message: err });
-    }
+  try {
+    const task = await Task.remove({ _id: req.params.taskId });
+    res.status(201).send(`${task} has been deleted.`);
+  } catch (err) {
+    res.status(400).json({ code: 400, message: err });
+  }
 };
 
 /* REMOVED UNTIL FUNCTIONALITY BUILT TO USE IT */
@@ -90,9 +90,9 @@ const deleteTask = async (req, res) => {
 // };
 
 module.exports = {
-    getTasks,
-    getTask,
-    createTask,
-    updateTask,
-    deleteTask
+  getTasks,
+  getTask,
+  createTask,
+  updateTask,
+  deleteTask
 };
