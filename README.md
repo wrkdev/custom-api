@@ -11,15 +11,15 @@ It also allows a user to make calls to external publicly available apis such as 
 
 Navigate to the resources folder to get information about how you can use the api:
 
-# Tasks.md
+### Tasks.md
 
 * Explanation of each endpoint with examples of creation and updating of tasks.
 
-# Posts.md
+### Posts.md
 
 * Explanation of each endpoint with examples of creation and updating of posts.
 
-# External.md
+### External.md
 
 * List of public open source apis integrated.
 * Explanation of endpoints with examples.
