@@ -1,4 +1,6 @@
 /* MAIN SERVER FILE FOR SETTING UP CUSTOM-API SERVER */
+const fs = require('fs');
+const https = require('https');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const express = require('express');
@@ -7,16 +9,23 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const moment = require('moment');
 
-/* const .ENV */ 
+/* IMPORT .ENV */ 
 const dotenv = require('dotenv');
 const dotenvExpand = require('dotenv-expand');
 dotenvExpand(dotenv.config());
 
-/* const SWAGGER FILES */
+/* IMPORT CERTIFICATES */
+const credentials = {
+  key: fs.readFileSync('./config/certs/key.pem'),
+  cert: fs.readFileSync('./config/certs/cert.pem'),
+  passphrase: process.env.CERT_PASSPHRASE
+};
+
+/* IMPORT SWAGGER FILES */
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./src/swagger/swagger.json');
 
-/* const ROUTES */
+/* IMPORT ROUTES */
 const routes = require('./src/routes');
 const router = express.Router();
 
@@ -37,7 +46,7 @@ app.use(logger('dev'));
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use('/api', router);
 
 
@@ -50,6 +59,6 @@ app.use((err, req, res, next) => {
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 });
 
-app.listen(process.env.PORT, () => {
-  console.log(`Application started and listening on port ${process.env.PORT}`);
+https.createServer(credentials, app).listen(443, () => {
+  console.log(`Application started on https://${process.env.APPLICATION_HOSTNAME}/api-docs`);
 });
