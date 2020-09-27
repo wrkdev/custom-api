@@ -31,6 +31,14 @@
                 "description": "Find out more",
                 "url": "https://github.com/wrkdev/custom-api/documentation/posts.html"
             }
+        },
+        {
+            "name": "External",
+            "description": "All operations for retrieving data from external sources",
+            "externalDocs": {
+                "description": "Find out more",
+                "url": "https://github.com/wrkdev/custom-api/documentation/external.html"
+            }
         }
     ],
     "schemes": [
@@ -77,7 +85,7 @@
                         "in": "body",
                         "description": "Task to be created",
                         "schema": {
-                            "$ref": "#definitions/Task"
+                            "$ref": "#/definitions/Task"
                         }
                     }
                 ],
@@ -88,7 +96,7 @@
                     "201": {
                         "description": "New Task created",
                         "schema": {
-                            "$ref": "#/definitions/Task"
+                            "$ref": "#/definitions/CreatedTask"
                         }
                     }
                 }
@@ -242,7 +250,7 @@
                     "201": {
                         "description": "Successfully created a new Post.",
                         "schema": {
-                            "$ref": "#/definitions/Post"
+                            "$ref": "#/definitions/CreatedPost"
                         }
                     },
                     "400": {
@@ -353,10 +361,38 @@
                     }
                 }
             }
+        },
+        "/external/covid": {
+            "get": {
+                "tags": [
+                    "External"
+                ],
+                "summary": "Retrieve a list of covid results",
+                "description": "Return a list of covid results",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Successfully retrieved a list of covid results",
+                        "schema": {
+                            "$ref": "#/definitions/CovidResults"
+                        }
+                    },
+                    "400": {
+                        "description": "Failed to retrieve covid results"
+                    }
+                }
+            }
         }
     },
     "definitions": {
         "Task": {
+            "example": {
+                "summary": "Task Summary",
+                "description": "This is the task description",
+                "createdBy": "User who created the task"
+            },
             "required": [
                 "summary",
                 "description",
@@ -381,6 +417,15 @@
             }
         },
         "UpdateTask": {
+            "example": {
+                "summary": "Task summary update",
+                "description": "This is the update for the task description",
+                "updatedBy": "You can add an updater to the task"
+            },
+            "required": [
+                "description",
+                "updatedBy"
+            ],
             "properties": {
                 "summary": {
                     "type": "string",
@@ -390,20 +435,61 @@
                     "type": "string",
                     "uniqueItems": true
                 },
-                "createdBy": {
+                "updatedBy": {
                     "type": "string",
                     "uniqueItems": false
                 }
             }
         },
+        "CreatedTask": {
+            "example": {
+                "_id": "5f70df1d9d1268056004bbe8",
+                "summary": "Task Summary",
+                "description": "This is the task description",
+                "createdBy": "User who created the task",
+                "date": "2020-09-27T18:51:09.539Z",
+                "__v": 0
+            },
+            "properties": {
+                "_id": {
+                    "type": "string",
+                    "uniqueItems": true
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "createdBy": {
+                    "type": "string"
+                },
+                "date": {
+                    "type": "string",
+                    "uniqueItems": true
+                },
+                "__V": {
+                    "type": "integer",
+                    "uniqueItems": true
+                }
+            }
+        },
         "Tasks": {
             "type": "array",
-            "$ref": "#/definitions/Task"
+            "items": {
+                "$ref": "#/definitions/CreatedTask"
+            }
         },
         "Post": {
+            "example": {
+                "title": "Post Title",
+                "description": "This is the post description",
+                "createdBy": "User that created the post"
+            },
             "required": [
                 "title",
-                "description"
+                "description",
+                "createdBy"
             ],
             "properties": {
                 "title": {
@@ -414,12 +500,25 @@
                     "type": "string",
                     "uniqueItems": false
                 },
+                "createdBy": {
+                    "type": "string",
+                    "uniqueItems": false
+                },
                 "date": {
                     "type": "string"
                 }
             }
         },
         "UpdatePost": {
+            "example": {
+                "title": "This is the updated title",
+                "description": "This is the update to the description",
+                "updatedBy": "This is the user who updated the post"
+            },
+            "required": [
+                "description",
+                "updatedBy"
+            ],
             "properties": {
                 "title": {
                     "type": "string",
@@ -427,12 +526,51 @@
                 },
                 "description": {
                     "type": "string"
+                },
+                "updatedBy": {
+                    "type": "string",
+                    "uniqueItems": true
+                }
+            }
+        },
+        "CreatedPost": {
+            "example": {
+                "_id": "5f70de1368766d4e5487f190",
+                "title": "Post Title",
+                "description": "This is the post description",
+                "createdBy": "User that created the post",
+                "date": "2020-09-27T18:46:43.771Z",
+                "__v": 0
+            },
+            "properties": {
+                "_id": {
+                    "type": "string",
+                    "uniqueItems": true
+                },
+                "title": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "createdBy": {
+                    "type": "string"
+                },
+                "date": {
+                    "type": "string",
+                    "uniqueItems": true
+                },
+                "__V": {
+                    "type": "integer",
+                    "uniqueItems": true
                 }
             }
         },
         "Posts": {
             "type": "array",
-            "$ref": "#/definitions/Post"
+            "items": {
+                "$ref": "#/definitions/CreatedPost"
+            }
         },
         "User": {
             "required": [
@@ -459,7 +597,15 @@
         },
         "Users": {
             "type": "array",
-            "$ref": "#/definitions/User"
+            "items": {
+                "$ref": "#/definitions/User"
+            }
+        },
+        "CovidResult": {
+
+        },
+        "CovidResults": {
+
         }
     }
 

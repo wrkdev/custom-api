@@ -49,7 +49,7 @@ const updateTask = async (req, res) => {
             $set: {
                 summary: req.body.summary ? req.body.summary : task.summary,
                 description: req.body.description ? req.body.description : task.description,
-                createdBy: req.body.createdBy ? req.body.createdBy : task.createdBy,
+                updatedBy: req.body.updatedBy ? req.body.updatedBy : task.updatedBy,
                 date: req.body.date ? req.body.date : task.date
             }
         };
