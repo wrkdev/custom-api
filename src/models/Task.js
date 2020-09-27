@@ -13,6 +13,9 @@ const taskSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    updatedBy: {
+        type: String
+    },
     date: {
         type: Date,
         default: Date.now

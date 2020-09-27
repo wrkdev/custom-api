@@ -27,7 +27,8 @@ const createPost = async (req, res) => {
 
     const post = new Post({
         title: req.body.title,
-        description: req.body.description
+        description: req.body.description,
+        createdBy: req.body.createdBy
     });
 
     try {
@@ -45,6 +46,7 @@ const updatePost = async (req, res) => {
             $set: {
                 title: req.body.title ? req.body.title : post.title,
                 description: req.body.description ? req.body.description : post.description,
+                updatedBy: req.body.updatedBy ? req.body.updatedBy : post.updatedBy,
                 date: req.body.date ? req.body.date : post.date
             }
         };

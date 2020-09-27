@@ -55,6 +55,8 @@ const postValidation = (data) => {
             .required(),
         description: Joi.string()
             .required(),
+        createdBy: Joi.string()
+            .required(),
         date: Joi.date()
     });
 
