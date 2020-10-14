@@ -5,7 +5,7 @@
 Custom-API is a Swagger API Application which allows users to make calls to tasks and posts endpoints.
 
 This application is for use with a frontend application or as a standalone data source. It allows a user to execute CRUD operations on tasks and posts.
-It also allows a user to make calls to external publicly available apis such as covid19api.com and more.
+It also in future allow a user to make calls to external publicly available apis such as covid19api.com and more.
 
 ## Resources
 
