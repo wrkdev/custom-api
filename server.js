@@ -1,6 +1,7 @@
 /* MAIN SERVER FILE FOR SETTING UP CUSTOM-API SERVER */
 const fs = require("fs");
 const https = require("https");
+const http = require("http");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const express = require("express");
@@ -61,4 +62,8 @@ app.use((err, req, res) => {
 
 https.createServer(credentials, app).listen(443, () => {
   console.log(`Application started on https://${process.env.APPLICATION_HOSTNAME}/api-docs`);
+});
+
+http.createServer(app).listen(80, () => {
+  console.log(`Application started on http://${process.env.APPLICATION_HOSTNAME}/api-docs`);
 });
