@@ -11,7 +11,7 @@
             "name": "MIT",
             "url": "https://github.com/wrkdev/custom-api/LICENSE"
         },
-        "version": "0.2.1"
+        "version": "0.2.2"
     },
     "host": "localhost",
     "basePath": "/api",

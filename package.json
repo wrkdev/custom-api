@@ -1,6 +1,6 @@
 {
   "name": "custom-api",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Custom API to handle calls to be built",
   "main": "server.js",
   "scripts": {
