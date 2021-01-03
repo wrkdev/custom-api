@@ -21,7 +21,7 @@
             "description": "All operations related to Tasks",
             "externalDocs": {
                 "description": "Find out more",
-                "url": "https://github.com/wrkdev/custom-api/documentation/tasks.html"
+                "url": "https://github.com/wrkdev/custom-api/resources/TASKS.md"
             }
         },
         {
@@ -29,7 +29,7 @@
             "description": "All operations related to Posts",
             "externalDocs": {
                 "description": "Find out more",
-                "url": "https://github.com/wrkdev/custom-api/documentation/posts.html"
+                "url": "https://github.com/wrkdev/custom-api/resources/POSTS.md"
             }
         },
         {
@@ -37,7 +37,7 @@
             "description": "All operations for retrieving data from external sources",
             "externalDocs": {
                 "description": "Find out more",
-                "url": "https://github.com/wrkdev/custom-api/documentation/external.html"
+                "url": "https://github.com/wrkdev/custom-api/resources/EXTERNAL.md"
             }
         }
     ],
@@ -362,29 +362,6 @@
                     }
                 }
             }
-        },
-        "/external/covid": {
-            "get": {
-                "tags": [
-                    "External"
-                ],
-                "summary": "Retrieve a list of covid results",
-                "description": "Return a list of covid results",
-                "produces": [
-                    "application/json"
-                ],
-                "responses": {
-                    "201": {
-                        "description": "Successfully retrieved a list of covid results",
-                        "schema": {
-                            "$ref": "#/definitions/CovidResults"
-                        }
-                    },
-                    "400": {
-                        "description": "Failed to retrieve covid results"
-                    }
-                }
-            }
         }
     },
     "definitions": {
@@ -601,12 +578,6 @@
             "items": {
                 "$ref": "#/definitions/User"
             }
-        },
-        "CovidResult": {
-
-        },
-        "CovidResults": {
-
         }
     }
 
